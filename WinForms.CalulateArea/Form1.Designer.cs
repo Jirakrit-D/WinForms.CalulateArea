@@ -29,21 +29,29 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtRaduis = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtHeitght = new TextBox();
+            txtWidth = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            textBox4 = new TextBox();
-            label5 = new Label();
+            txtHexagonWidth = new TextBox();
+            lblResult = new Label();
             label6 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnCircleArea = new Button();
+            btnTriangleArea = new Button();
+            btnHexagonArea = new Button();
             groupBox1 = new GroupBox();
+            label8 = new Label();
+            label5 = new Label();
             groupBox2 = new GroupBox();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
             groupBox3 = new GroupBox();
+            label13 = new Label();
+            label12 = new Label();
+            label7 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -58,13 +66,15 @@
             label1.TabIndex = 0;
             label1.Text = "รัศมี";
             // 
-            // textBox1
+            // txtRaduis
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(101, 47);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 34);
-            textBox1.TabIndex = 1;
+            txtRaduis.BorderStyle = BorderStyle.FixedSingle;
+            txtRaduis.Location = new Point(101, 47);
+            txtRaduis.Name = "txtRaduis";
+            txtRaduis.Size = new Size(125, 34);
+            txtRaduis.TabIndex = 1;
+            txtRaduis.Text = "1";
+            txtRaduis.TextAlign = HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -75,21 +85,21 @@
             label2.TabIndex = 2;
             label2.Text = "ความสูง";
             // 
-            // textBox2
+            // txtHeitght
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(172, 48);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 34);
-            textBox2.TabIndex = 3;
+            txtHeitght.BorderStyle = BorderStyle.FixedSingle;
+            txtHeitght.Location = new Point(172, 48);
+            txtHeitght.Name = "txtHeitght";
+            txtHeitght.Size = new Size(125, 34);
+            txtHeitght.TabIndex = 3;
             // 
-            // textBox3
+            // txtWidth
             // 
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Location = new Point(172, 115);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 34);
-            textBox3.TabIndex = 4;
+            txtWidth.BorderStyle = BorderStyle.FixedSingle;
+            txtWidth.Location = new Point(172, 115);
+            txtWidth.Name = "txtWidth";
+            txtWidth.Size = new Size(125, 34);
+            txtWidth.TabIndex = 4;
             // 
             // label3
             // 
@@ -109,26 +119,26 @@
             label4.TabIndex = 6;
             label4.Text = "ความยาวฐาน";
             // 
-            // textBox4
+            // txtHexagonWidth
             // 
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Location = new Point(157, 76);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 34);
-            textBox4.TabIndex = 7;
+            txtHexagonWidth.BorderStyle = BorderStyle.FixedSingle;
+            txtHexagonWidth.Location = new Point(157, 76);
+            txtHexagonWidth.Name = "txtHexagonWidth";
+            txtHexagonWidth.Size = new Size(125, 34);
+            txtHexagonWidth.TabIndex = 7;
             // 
-            // label5
+            // lblResult
             // 
-            label5.BackColor = Color.FromArgb(192, 255, 255);
-            label5.BorderStyle = BorderStyle.FixedSingle;
-            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(0, 0, 192);
-            label5.Location = new Point(712, 51);
-            label5.Name = "label5";
-            label5.Size = new Size(281, 159);
-            label5.TabIndex = 8;
-            label5.Text = "label5";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            lblResult.BackColor = Color.FromArgb(192, 255, 255);
+            lblResult.BorderStyle = BorderStyle.FixedSingle;
+            lblResult.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblResult.ForeColor = Color.FromArgb(0, 0, 192);
+            lblResult.Location = new Point(712, 51);
+            lblResult.Name = "lblResult";
+            lblResult.Size = new Size(281, 159);
+            lblResult.TabIndex = 8;
+            lblResult.Text = "...";
+            lblResult.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -140,38 +150,41 @@
             label6.TabIndex = 9;
             label6.Text = "พื้นที่ (ตารางหน่วย)";
             // 
-            // button1
+            // btnCircleArea
             // 
-            button1.Location = new Point(273, 39);
-            button1.Name = "button1";
-            button1.Size = new Size(225, 49);
-            button1.TabIndex = 10;
-            button1.Text = "คำนวณพื้นที่วงกลม";
-            button1.UseVisualStyleBackColor = true;
+            btnCircleArea.Location = new Point(273, 39);
+            btnCircleArea.Name = "btnCircleArea";
+            btnCircleArea.Size = new Size(225, 49);
+            btnCircleArea.TabIndex = 10;
+            btnCircleArea.Text = "คำนวณพื้นที่วงกลม";
+            btnCircleArea.UseVisualStyleBackColor = true;
+            btnCircleArea.Click += btnCircleArea_Click;
             // 
-            // button2
+            // btnTriangleArea
             // 
-            button2.Location = new Point(340, 65);
-            button2.Name = "button2";
-            button2.Size = new Size(225, 49);
-            button2.TabIndex = 11;
-            button2.Text = "คำนวณพื้นที่สามเหลี่ยม";
-            button2.UseVisualStyleBackColor = true;
+            btnTriangleArea.Location = new Point(340, 65);
+            btnTriangleArea.Name = "btnTriangleArea";
+            btnTriangleArea.Size = new Size(225, 49);
+            btnTriangleArea.TabIndex = 11;
+            btnTriangleArea.Text = "คำนวณพื้นที่สามเหลี่ยม";
+            btnTriangleArea.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnHexagonArea
             // 
-            button3.Location = new Point(325, 69);
-            button3.Name = "button3";
-            button3.Size = new Size(225, 49);
-            button3.TabIndex = 12;
-            button3.Text = "คำนวณพื้นที่รูปหกเหลี่ยม";
-            button3.UseVisualStyleBackColor = true;
+            btnHexagonArea.Location = new Point(325, 69);
+            btnHexagonArea.Name = "btnHexagonArea";
+            btnHexagonArea.Size = new Size(225, 49);
+            btnHexagonArea.TabIndex = 12;
+            btnHexagonArea.Text = "คำนวณพื้นที่รูปหกเหลี่ยม";
+            btnHexagonArea.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(255, 255, 192);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(btnCircleArea);
+            groupBox1.Controls.Add(txtRaduis);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(28, 30);
             groupBox1.Name = "groupBox1";
@@ -180,13 +193,40 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "คำนวณพื้นที่วงกลม";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label8.ForeColor = Color.Red;
+            label8.Location = new Point(357, 91);
+            label8.Name = "label8";
+            label8.Size = new Size(141, 28);
+            label8.TabIndex = 16;
+            label8.Text = "btnCircleArea";
+            label8.Visible = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label5.ForeColor = Color.Red;
+            label5.Location = new Point(124, 84);
+            label5.Name = "label5";
+            label5.Size = new Size(102, 28);
+            label5.TabIndex = 16;
+            label5.Text = "txtRadius";
+            label5.Visible = false;
+            // 
             // groupBox2
             // 
             groupBox2.BackColor = Color.FromArgb(255, 192, 255);
-            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(btnTriangleArea);
+            groupBox2.Controls.Add(label11);
+            groupBox2.Controls.Add(label10);
+            groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label2);
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(txtHeitght);
+            groupBox2.Controls.Add(txtWidth);
             groupBox2.Controls.Add(label3);
             groupBox2.Location = new Point(28, 212);
             groupBox2.Name = "groupBox2";
@@ -195,12 +235,50 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "คำนวณพื้นที่สามเหลี่ยม";
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label11.ForeColor = Color.Red;
+            label11.Location = new Point(401, 115);
+            label11.Name = "label11";
+            label11.Size = new Size(164, 28);
+            label11.TabIndex = 16;
+            label11.Text = "btnTriangleArea";
+            label11.Visible = false;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label10.ForeColor = Color.Red;
+            label10.Location = new Point(194, 152);
+            label10.Name = "label10";
+            label10.Size = new Size(97, 28);
+            label10.TabIndex = 16;
+            label10.Text = "txtWidth";
+            label10.Visible = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label9.ForeColor = Color.Red;
+            label9.Location = new Point(195, 85);
+            label9.Name = "label9";
+            label9.Size = new Size(103, 28);
+            label9.TabIndex = 16;
+            label9.Text = "txtHeight";
+            label9.Visible = false;
+            // 
             // groupBox3
             // 
             groupBox3.BackColor = Color.FromArgb(192, 255, 192);
-            groupBox3.Controls.Add(textBox4);
+            groupBox3.Controls.Add(txtHexagonWidth);
+            groupBox3.Controls.Add(label13);
             groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(button3);
+            groupBox3.Controls.Add(btnHexagonArea);
+            groupBox3.Controls.Add(label12);
             groupBox3.Location = new Point(28, 420);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(621, 188);
@@ -208,20 +286,58 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "คำนวณพื้นที่รูปหกเหลี่ยมด้านเท่า";
             // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label13.ForeColor = Color.Red;
+            label13.Location = new Point(378, 113);
+            label13.Name = "label13";
+            label13.Size = new Size(172, 28);
+            label13.TabIndex = 16;
+            label13.Text = "btnHexagonArea";
+            label13.Visible = false;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label12.ForeColor = Color.Red;
+            label12.Location = new Point(138, 113);
+            label12.Name = "label12";
+            label12.Size = new Size(181, 28);
+            label12.TabIndex = 16;
+            label12.Text = "txtHexagonWidth";
+            label12.Visible = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(889, 212);
+            label7.Name = "label7";
+            label7.Size = new Size(95, 28);
+            label7.TabIndex = 16;
+            label7.Text = "lblResult";
+            label7.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1044, 639);
+            Controls.Add(label7);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label6);
-            Controls.Add(label5);
+            Controls.Add(lblResult);
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
             Name = "Form1";
             Text = "WinForms.CalculateArea (คำนวณพื้นที่รูปภาพเรขาคณิต)";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -236,20 +352,28 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtRaduis;
         private Label label2;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtHeitght;
+        private TextBox txtWidth;
         private Label label3;
         private Label label4;
-        private TextBox textBox4;
-        private Label label5;
+        private TextBox txtHexagonWidth;
+        private Label lblResult;
         private Label label6;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnCircleArea;
+        private Button btnTriangleArea;
+        private Button btnHexagonArea;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
+        private Label label8;
+        private Label label5;
+        private Label label7;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label13;
+        private Label label12;
     }
 }
