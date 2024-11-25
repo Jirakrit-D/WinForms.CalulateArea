@@ -6,5 +6,10 @@ namespace WinForms.CalulateArea
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("ยินดีต้อนรับผู้ใช้งาน", "Welcome");
+        }
     }
 }

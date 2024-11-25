@@ -219,9 +219,10 @@
             Controls.Add(label6);
             Controls.Add(label5);
             Font = new Font("Segoe UI", 12F);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "Form1";
             Text = "WinForms.CalculateArea (คำนวณพื้นที่รูปภาพเรขาคณิต)";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
